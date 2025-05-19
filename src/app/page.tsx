@@ -46,7 +46,7 @@ export default function Home() {
           const skills = item.skills.split(",")
           return (
             <span key={item._id}>
-            {skills.map((skill) => skill.concat(" • "))}
+            {skills.map((skill) => skill.concat(" • ")) ?? ""}
             </span>
           )
          })}
