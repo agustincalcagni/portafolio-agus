@@ -8,9 +8,9 @@ import MarkdownRenderer from '@/app/components/MarkDownrenderer';
 export default async function ProjectPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const id =  params.id
+  const id = await params.then((p) => p.id)
   const project = allProjects.find(
     (proj) => proj._raw.flattenedPath === `projects/${id}`
   );
