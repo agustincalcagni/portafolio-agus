@@ -1,0 +1,40 @@
+---
+title: "Análisis de datos de una prueba técnica en Flybondi con Qlik Sense"
+date: 2024-09-15
+draft: false
+---
+
+# Análisis de datos en Flybondi con Qlik Sense
+
+En este post, exploraremos cómo abordar el análisis de datos de una prueba técnica realizada para Flybondi utilizando Qlik Sense. Este análisis se centra en la visualización y exploración interactiva de datos para obtener insights clave.
+
+## Objetivo
+
+El objetivo principal es utilizar Qlik Sense para:
+
+- Crear dashboards interactivos.
+- Visualizar métricas clave relacionadas con vuelos y rutas.
+- Identificar patrones y tendencias en los datos.
+
+## Pasos del análisis
+
+1. **Carga de datos en Qlik Sense**  
+   Importamos los datos desde las fuentes proporcionadas, como archivos CSV o bases de datos relacionales.
+
+2. **Preparación de los datos**  
+   Realizamos transformaciones básicas, como limpieza de datos, creación de campos calculados y establecimiento de relaciones entre tablas.
+
+3. **Creación de visualizaciones**  
+   Diseñamos gráficos y tablas para responder preguntas clave, como:
+
+   - ¿Cuáles son las rutas con mayor ocupación?
+   - ¿Qué porcentaje de vuelos presentan retrasos?
+   - ¿Cómo varía el rendimiento de las rutas a lo largo del tiempo?
+
+4. **Ejemplo de visualización**  
+   Creamos un gráfico de barras para mostrar la ocupación promedio por ruta:
+
+   ```qlik
+   Dimension: Ruta
+   Medida: Avg(Ocupación)
+   ```

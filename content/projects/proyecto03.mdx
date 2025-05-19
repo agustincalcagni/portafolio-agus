@@ -1,0 +1,87 @@
+---
+title: "Análisis de datos climáticos con Qlik Sense"
+date: 2025-05-06
+draft: false
+---
+
+# Análisis de datos climáticos con Qlik Sense
+
+En este post, te mostraré cómo utilizar **Qlik Sense** para realizar un análisis exploratorio de datos climáticos reales. Nos enfocaremos en cómo convertir datos meteorológicos crudos en insights útiles a través de dashboards interactivos, ayudando a tomar decisiones informadas en contextos como la agricultura, planificación urbana o energía.
+
+## 🎯 Objetivo
+
+El propósito de este análisis es aprovechar las capacidades de Qlik Sense para:
+
+- Visualizar métricas como temperatura, humedad y precipitaciones a lo largo del tiempo  
+- Detectar patrones climáticos por región o estación del año  
+- Identificar posibles anomalías o fenómenos extremos (olas de calor, lluvias atípicas)  
+- Brindar una herramienta accesible para la toma de decisiones basadas en datos
+
+## 📦 Dataset utilizado
+
+Trabajamos con datos históricos del servicio meteorológico nacional, que incluyen registros diarios de:
+- Temperatura mínima
+- Temperatura máxima
+- Precipitaciones 
+- Humedad relativa
+
+Desde 2010 hasta 2023. El dataset en formato `.csv` comprende más de **250.000 filas** de distintas estaciones meteorológicas del país.
+
+---
+
+## 🛠️ Pasos del análisis
+
+### 1. Carga y conexión de datos en Qlik Sense
+
+```qlik
+LOAD 
+  Fecha,
+  Estacion,
+  TemperaturaMin,
+  TemperaturaMax,
+  Precipitacion,
+  HumedadRelativa
+FROM [lib://datos_climaticos/historico.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+```
+
+Importamos múltiples archivos CSV y, opcionalmente, conectamos una API para datos en tiempo real.
+
+### 2. Transformación y limpieza de datos
+
+Acciones realizadas:
+
+Eliminación de registros incompletos o duplicados
+
+Conversión de formato de fecha:
+```qlik
+Date(Fecha, 'YYYY-MM-DD') AS Fecha
+```
+
+- Cálculo de variables derivadas:
+
+```qlik
+TempPromedio   = (TemperaturaMin + TemperaturaMax) / 2
+Mes            = Month(Fecha)
+EstacionAnio   = If(
+                   Mes >= 12 or Mes <= 2, 'Verano',
+                   If(Mes >= 3 and Mes <= 5, 'Otoño',
+                   If(Mes >= 6 and Mes <= 8, 'Invierno',
+                      'Primavera')))
+```
+### 3. Exploración visual de los datos
+
+Diseñamos dashboards interactivos para:
+
+Promedio mensual de temperatura por región
+
+Total anual de precipitaciones
+
+Comparaciones de humedad relativa entre estaciones
+
+Ejemplo: Tendencia de temperatura promedio anual
+
+```qlik
+Dimension: Año  
+Medida: Avg((TemperaturaMin + TemperaturaMax) / 2)
+```
