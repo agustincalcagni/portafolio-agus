@@ -20,6 +20,7 @@ export default function Home() {
             height={90}
             alt="Avatar image"
             className="rounded-md bg-[#ff7759e8]"
+            fetchPriority="high"
           />
           <aside className="flex flex-col max-w-sm text-[20px] dark:text-zinc-400">
             <span>Agustín Calcagni</span>
