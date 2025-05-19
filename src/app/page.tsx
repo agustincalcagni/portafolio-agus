@@ -43,7 +43,7 @@ export default function Home() {
       <div className="overflow-hidden whitespace-nowrap py-4 bg-zinc-100 dark:bg-zinc-900">
         <div className="inline-block whitespace-nowrap font-semibold text-lg text-zinc-700 dark:text-zinc-300 animate-[marquee_20s_linear_infinite]">
          {allProfiles.map((item) => {
-          const skills = item.skills.split(",")
+          const skills = item.skills.split(",") || "No, Disponible"
           return (
             <span key={item._id}>
             {skills.map((skill) => skill.concat(" • ")) ?? ""}
