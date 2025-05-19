@@ -5,7 +5,13 @@ import { dateFormatter } from '@/app/consts';
 import { MoveLeft } from 'lucide-react'
 import MarkdownRenderer from '@/app/components/MarkDownrenderer';
 
-export default async function ProjectPage({ params }: { params: { id: string } }) {
+type ProjectPageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const project = allProjects.find(
     (proj) => proj._raw.flattenedPath === `projects/${params.id}`
   );
