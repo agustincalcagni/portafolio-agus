@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { allProfiles } from "../../.contentlayer/generated";
 import { notFound } from "next/navigation";
-import { Mail, Linkedin, MessageCircle } from "lucide-react";
 
 export default function Home() {
   const profile = allProfiles.find(
@@ -19,7 +18,7 @@ export default function Home() {
             src="/avatar-agus.png"
             width={90}
             height={90}
-            alt="Avatar image" 
+            alt="Avatar image"
             className="rounded-md bg-[#ff7759e8]"
             fetchPriority="high"
           />
@@ -43,47 +42,50 @@ export default function Home() {
         <p>{profile?.body.raw}</p>
       </div>
 
-      <div className="overflow-hidden whitespace-nowrap py-4 bg-zinc-100 dark:bg-zinc-900">
-        <div className="inline-block whitespace-nowrap font-semibold text-lg text-zinc-700 dark:text-zinc-300 animate-[marquee_20s_linear_infinite]">
-          {allProfiles.map((item) => {
-            const skills =
-              typeof item.skills === "string"
-                ? item.skills.split(",")
-                : ["No disponible"];
-            return (
-              <span key={item._id}>
-                {skills.map((skill, index) => (
-                  <span key={index}>{skill.trim()} • </span>
-                ))}
-              </span>
-            );
-          })}
+      <div className="overflow-hidden whitespace-nowrap py-4 ">
+        <div className="inline-flex gap-10 whitespace-nowrap font-semibold text-lg text-zinc-700 dark:text-[#626262] animate-[marquee_20s_linear_infinite]">
+          <Image
+            src={"/Google_Cloud_logo.svg"}
+            width={160}
+            height={90}
+            alt=""
+            className="marquee-images"
+          />
+          <Image
+            src={"/logo-qlik_d49uek.svg"}
+            width={60}
+            height={60}
+            alt=""
+            className="marquee-images"
+          />
+          <Image
+          src={"/Snowflake_Logo.svg"}
+          width={120}
+          height={45}
+          alt=""
+          className="marquee-images"
+          />
+          <span className="flex gap-2 items-center font-['system-ui']">
+            Microsoft Power BI
+            <Image
+              src={"/New_Power_BI_Logo.svg"}
+              width={45}
+              height={45}
+              alt=""
+              className="marquee-images"
+            />
+          </span>
+          <span className="flex gap-2 items-center font-['system-ui']">
+            Microsoft Excel
+            <Image
+              src={"/Microsoft_Office_Excel_(2019–present).svg"}
+              width={45}
+              height={45}
+              alt=""
+              className="marquee-images"
+            />
+          </span>
         </div>
-      </div>
-
-      <div className="block md:flex space-y-4 md:space-y-0 justify-center gap-4 p-6">
-        <a
-          href="https://wa.me/+5492665139328"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 border border-zinc-300 dark:border-zinc-700 rounded-md text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 transition-colors"
-        >
-          <MessageCircle size={18} /> WhatsApp
-        </a>
-        <a
-          href="https://www.linkedin.com/in/cacalcagni/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 border border-zinc-300 dark:border-zinc-700 rounded-md text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 transition-colors"
-        >
-          <Linkedin size={18} /> LinkedIn
-        </a>
-        <a
-          href="mailto:agustincalcagni@gmail.com"
-          className="flex items-center gap-2 px-4 py-2 border border-zinc-300 dark:border-zinc-700 rounded-md text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 transition-colors"
-        >
-          <Mail size={18} /> Gmail
-        </a>
       </div>
     </section>
   );

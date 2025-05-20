@@ -1,16 +1,16 @@
-import { allProjects } from '../../../../.contentlayer/generated';
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import { dateFormatter } from '@/app/consts';
-import { MoveLeft } from 'lucide-react';
-import MarkdownRenderer from '@/app/components/MarkDownrenderer';
+import { allProjects } from "../../../../.contentlayer/generated";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { dateFormatter } from "@/app/consts";
+import { MoveLeft } from "lucide-react";
+import MarkdownRenderer from "@/app/components/MarkDownrenderer";
 
 export default async function ProjectPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const id = await params.then((p) => p.id)
+  const { id } = await params;
   const project = allProjects.find(
     (proj) => proj._raw.flattenedPath === `projects/${id}`
   );
@@ -30,10 +30,10 @@ export default async function ProjectPage({
       </span>
       <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
       <p className="text-gray-600 mb-4">
-        {dateFormatter({ lang: 'es-AR', rawDate: project.date })}
+        {dateFormatter({ lang: "es-AR", rawDate: project.date })}
       </p>
       <div className="prose">
-        <MarkdownRenderer content={project.body.raw ?? ''} />
+        <MarkdownRenderer content={project.body.raw ?? ""} />
       </div>
     </section>
   );

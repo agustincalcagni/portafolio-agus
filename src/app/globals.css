@@ -44,3 +44,13 @@ body {
   background-color: var(--scrollbar-bg);
   border-radius: 10px;
 }
+
+.cls-2 {
+  stroke-width: 0;
+  fill: #54565a;
+}
+
+.marquee-images {
+  filter: grayscale(100%);
+  font-variant: small-caps;
+}

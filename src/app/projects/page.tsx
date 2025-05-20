@@ -1,6 +1,6 @@
 import { allProjects } from "../../../.contentlayer/generated";
-import { dateFormatter } from "../consts";
-import { HeaderStyle } from "../components/HeaderStyle";
+import { dateFormatter } from "@/app/consts";
+import { HeaderStyle } from "@/app/components/HeaderStyle";
 
 export default async function ProjectsPage() {
   return (
@@ -19,7 +19,6 @@ export default async function ProjectsPage() {
               >
                 <h2 className="text-lg font-semibold hover:underline">
                   {project.title}
-                  {project._raw.flattenedPath}
                 </h2>
                 <p className="text-sm text-gray-500">
                   {dateFormatter({ lang: "es-AR", rawDate: project.date })}

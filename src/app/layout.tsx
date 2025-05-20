@@ -21,8 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${shareTechMono.className} antialiased`}>
-        <main className="w-full flex flex-col h-[100dvh] p-3 bg-[#E9E6DE] dark:bg-[#181818]">
+      <body className={`${shareTechMono.className} antialiased xl:w-10/12 xl:flex xl:justify-center xl:mx-auto`}>
+        <main className="w-full flex flex-col h-[100dvh] p-3 bg-[#E9E6DE] dark:bg-[#181818] ">
           {/* Header */}
           <header className="w-full h-auto md:h-14 border border-zinc-300/70 dark:border-zinc-700/30 rounded-lg bg-[#FAFAFA] dark:bg-zinc-800/50 flex flex-col md:flex-row justify-between items-center px-3 py-2 md:py-0 z-50">
             <div className="flex items-center gap-2">
