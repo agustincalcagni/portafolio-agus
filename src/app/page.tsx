@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { allProfiles } from "../../.contentlayer/generated";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { Mail, Linkedin } from "lucide-react";
 import { MarqueeLogos } from "./components/MarqueeLogos";
 
 export default function Home() {
@@ -40,6 +38,7 @@ export default function Home() {
           />
         </span>
       </header>
+      
 
       <div className="p-6 space-y-4 dark:text-zinc-200">
         <p>{profile?.body.raw}</p>
@@ -48,23 +47,6 @@ export default function Home() {
      <section className="overflow-x-hidden">
      <MarqueeLogos />
      </section>
-
-      <footer className="grid mx-auto md:flex md:justify-between text-zinc-800 dark:text-zinc-200 mt-5 gap-3 px-6">
-        <Link
-          href="https://www.linkedin.com/in/agustincalcagni/"
-          className="flex items-center gap-2 hover:text-[#FF7759] transition-colors duration-200"
-        >
-          <Linkedin />
-          agustincalcagni
-        </Link>
-        <Link
-          href="mailto:agustincalcagni@gmail.com"
-          className="flex items-center gap-2 hover:text-[#FF7759] transition-colors duration-200"
-        >
-          <Mail />
-          agustincalcagni@gmail.com
-        </Link>
-      </footer>
     </section>
   );
 }

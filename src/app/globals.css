@@ -28,11 +28,11 @@ body {
 }
 
 @keyframes marquee {
-  from {
-    transform: translateX(-100%);
+  0% {
+    transform: translateX(-50%);
   }
-  to {
-    transform: translateX(100%);
+  100% {
+    transform: translateX(0%);
   }
 }
 
@@ -51,13 +51,9 @@ body {
 }
 
 .marquee-images {
-  filter: grayscale(100%) drop-shadow(1px 2px 3px #222);
+  filter: drop-shadow(1px 2px 3px #222);
   transition-property: filter;
   transition-duration: 0.6s;
-}
-
-.marquee-images:hover {
-  filter: grayscale(0%) drop-shadow(1px 2px 3px #222);
 }
 
 .text-shadow {
