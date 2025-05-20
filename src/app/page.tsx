@@ -50,6 +50,7 @@ export default function Home() {
             height={90}
             alt=""
             className="marquee-images"
+            fetchPriority="high"
           />
           <Image
             src={"/logo-qlik_d49uek.svg"}
@@ -57,6 +58,7 @@ export default function Home() {
             height={60}
             alt=""
             className="marquee-images"
+            fetchPriority="high"
           />
           <Image
           src={"/Snowflake_Logo.svg"}
@@ -64,6 +66,7 @@ export default function Home() {
           height={45}
           alt=""
           className="marquee-images"
+          fetchPriority="high"
           />
           <span className="flex gap-2 items-center font-['system-ui']">
             Microsoft Power BI
@@ -73,6 +76,7 @@ export default function Home() {
               height={45}
               alt=""
               className="marquee-images"
+              fetchPriority="high"
             />
           </span>
           <span className="flex gap-2 items-center font-['system-ui']">
@@ -83,6 +87,7 @@ export default function Home() {
               height={45}
               alt=""
               className="marquee-images"
+              fetchPriority="high"
             />
           </span>
         </div>
