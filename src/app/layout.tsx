@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#E9E6DE] dark:bg-[#181818]">
       <body className={`${shareTechMono.className} antialiased xl:w-10/12 xl:flex xl:justify-center xl:mx-auto`}>
         <main className="w-full flex flex-col h-[100dvh] p-3 bg-[#E9E6DE] dark:bg-[#181818] ">
           {/* Header */}
@@ -39,7 +39,7 @@ export default function RootLayout({
                   ></path>
                 </svg>
                 <h3 className="text-[1.3rem] text-zinc-700 dark:text-zinc-200">
-                  AG
+                  AC
                 </h3>
 
               <p className="text-xl text-font-second-color font-extralight">

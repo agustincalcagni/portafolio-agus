@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { allProfiles } from "../../.contentlayer/generated";
 import { notFound } from "next/navigation";
+import Link from "next/link";
+import { Mail, Linkedin } from "lucide-react";
 
 export default function Home() {
   const profile = allProfiles.find(
@@ -42,8 +44,8 @@ export default function Home() {
         <p>{profile?.body.raw}</p>
       </div>
 
-      <div className="overflow-hidden whitespace-nowrap py-4 ">
-        <div className="inline-flex gap-10 whitespace-nowrap font-semibold text-lg text-zinc-700 dark:text-[#626262] animate-[marquee_20s_linear_infinite]">
+      <div className="overflow-hidden whitespace-nowrap py-4">
+        <div className="inline-flex gap-10 whitespace-nowrap font-semibold text-lg text-zinc-600 dark:text-[#626262] animate-[marquee_20s_linear_infinite] text-shadow">
           <Image
             src={"/Google_Cloud_logo.svg"}
             width={160}
@@ -92,6 +94,16 @@ export default function Home() {
           </span>
         </div>
       </div>
+      <footer className="flex justify-center dark:text-zinc-200 mt-4 gap-3">
+        <Link href="mailto:agustincalcagni@gmail.com" className="flex items-center gap-2 hover:text-[#FF7759]">
+          <Mail />
+          agustincalcagni@gmail.com
+        </Link>
+        <Link href="https://www.linkedin.com/in/agustincalcagni/" className="flex items-center gap-2 hover:text-[#FF7759]">
+          <Linkedin />
+          agustincalcagni
+        </Link>
+      </footer>
     </section>
   );
 }

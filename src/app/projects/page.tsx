@@ -7,7 +7,7 @@ export default async function ProjectsPage() {
     <section className="dark:text-zinc-200">
       <HeaderStyle title="Proyectos" />
       <div className="p-6">
-        <ul className="space-y-4">
+        <ul className="grid md:grid-cols-2 gap-2">
           {allProjects.map((project) => (
             <li
               key={project._id}
