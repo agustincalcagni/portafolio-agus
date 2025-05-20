@@ -12,7 +12,7 @@ export const HeaderStyle = ({ title }: { title: string }) => {
           fill
           alt="Banner image"
           quality={100}
-          className="absolute top-0 left-0 opacity-80"
+          className="absolute top-0 left-0 grayscale-25"
         />
       </span>
     </header>

@@ -36,7 +36,7 @@ export default function Home() {
             fill
             alt="Banner image"
             quality={100}
-            className="absolute top-0 left-0 opacity-80"
+            className="absolute top-0 left-0 grayscale-25"
           />
         </span>
       </header>
@@ -47,14 +47,20 @@ export default function Home() {
 
       <MarqueeLogos />
 
-      <footer className="flex justify-between text-zinc-800 dark:text-zinc-200 mt-4 gap-3 px-6">
-        <Link href="mailto:agustincalcagni@gmail.com" className="flex items-center gap-2 hover:text-[#FF7759] transition-colors duration-200">
-          <Mail />
-          agustincalcagni@gmail.com
-        </Link>
-        <Link href="https://www.linkedin.com/in/agustincalcagni/" className="flex items-center gap-2 hover:text-[#FF7759] transition-colors duration-200">
+      <footer className="grid mx-auto md:flex md:justify-between text-zinc-800 dark:text-zinc-200 mt-4 gap-3 p-6">
+        <Link
+          href="https://www.linkedin.com/in/agustincalcagni/"
+          className="flex items-center gap-2 hover:text-[#FF7759] transition-colors duration-200"
+        >
           <Linkedin />
           agustincalcagni
+        </Link>
+        <Link
+          href="mailto:agustincalcagni@gmail.com"
+          className="flex items-center gap-2 hover:text-[#FF7759] transition-colors duration-200"
+        >
+          <Mail />
+          agustincalcagni@gmail.com
         </Link>
       </footer>
     </section>
