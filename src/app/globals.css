@@ -63,3 +63,18 @@ body {
 .text-shadow {
   text-shadow: 1px 1px 4px #333;
 }
+
+.no-scroll-bar::-webkit-scrollbar {
+  background-color: transparent;
+  height: 4px;
+}
+.children-page::-webkit-scrollbar-thumb {
+  transition-property: color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
+  height: 4px;
+}
+.no-scroll-bar::-webkit-scrollbar-thumb:hover {
+  background-color: #5d5d5d42;
+  border-radius: 6px;
+}
