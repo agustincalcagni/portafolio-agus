@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <section>
-      <header className="flex justify-between bg-[#F5F4F2] dark:bg-zinc-950/20 md:max-h-[240px] p-10 relative border-b border-zinc-200/70 dark:border-zinc-700/30 items-center overflow-hidden">
+      <header className="flex justify-between bg-[#F5F4F2] dark:bg-zinc-950/20 md:max-h-[240px] md:p-10 p-4 relative border-b border-zinc-200/70 dark:border-zinc-700/30 items-center overflow-hidden">
         <div className="flex gap-3 items-center z-50 w-full md:p-[13px]">
           <Image
             src="/avatar-agus.png"
