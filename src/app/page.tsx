@@ -61,7 +61,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex justify-center gap-4 py-8">
+      <div className="block md:flex space-y-4 md:space-y-0 justify-center gap-4 p-6">
         <a
           href="https://wa.me/+5492665139328"
           target="_blank"
