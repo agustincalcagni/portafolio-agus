@@ -71,7 +71,7 @@ export default function Home() {
           <MessageCircle size={18} /> WhatsApp
         </a>
         <a
-          href="https://www.linkedin.com/in/tu-usuario"
+          href="https://www.linkedin.com/in/cacalcagni/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-4 py-2 border border-zinc-300 dark:border-zinc-700 rounded-md text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 transition-colors"
