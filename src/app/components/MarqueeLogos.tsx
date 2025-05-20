@@ -4,7 +4,7 @@ import { Children, cloneElement, ReactNode } from "react";
 
 const Clone = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="flex w-[200%] gap-3">
+    <div className="flex w-[202%] gap-3">
       {Children.map(children, (child: any) => cloneElement(child))}
       {Children.map(children, (child: any) => cloneElement(child))}
     </div>
