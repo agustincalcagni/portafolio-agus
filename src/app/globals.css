@@ -52,6 +52,12 @@ body {
 
 .marquee-images {
   filter: grayscale(100%) drop-shadow(1px 2px 3px #222);
+  transition-property: filter;
+  transition-duration: 1s;
+}
+
+.marquee-images:hover {
+  filter: grayscale(0%) drop-shadow(1px 2px 3px #222);
 }
 
 .text-shadow {
