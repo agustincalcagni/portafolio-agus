@@ -22,9 +22,9 @@ export default async function ProjectPage({
       <span>
         <Link
           href="/projects"
-          className="flex gap-1 items-center mb-3 hover:underline"
+          className="flex gap-1 items-center mb-3 hover:underline group transition-transform duration-300"
         >
-          <MoveLeft />
+          <MoveLeft className="group-hover:-translate-x-1" />
           Volver
         </Link>
       </span>

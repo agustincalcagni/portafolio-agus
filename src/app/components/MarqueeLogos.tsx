@@ -1,6 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
+import { Children, cloneElement, ReactNode } from "react";
 
-export const MarqueeLogos = () => {
+const Clone = ({ children }: { children: ReactNode }) => {
+  return (
+    <div className="flex w-[200%] gap-3">
+      {Children.map(children, (child: any) => cloneElement(child))}
+      {Children.map(children, (child: any) => cloneElement(child))}
+    </div>
+  );
+};
+
+const Logos = () => {
   return (
     <div className="overflow-hidden whitespace-nowrap py-4">
       <div className="inline-flex gap-10 whitespace-nowrap font-semibold text-lg text-zinc-600 dark:text-[#626262] animate-[marquee_26s_linear_infinite] text-shadow cursor-default">
@@ -32,8 +43,8 @@ export const MarqueeLogos = () => {
           Microsoft Power BI
           <Image
             src={"/New_Power_BI_Logo.svg"}
-            width={45}
-            height={45}
+            width={40}
+            height={40}
             alt=""
             className="marquee-images"
             fetchPriority="high"
@@ -53,4 +64,12 @@ export const MarqueeLogos = () => {
       </div>
     </div>
   );
+};
+
+export const MarqueeLogos = () => {
+  return (
+    <Clone>
+    <Logos />
+  </Clone>
+  )
 };

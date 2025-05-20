@@ -45,9 +45,11 @@ export default function Home() {
         <p>{profile?.body.raw}</p>
       </div>
 
-      <MarqueeLogos />
+     <section className="overflow-x-hidden">
+     <MarqueeLogos />
+     </section>
 
-      <footer className="grid mx-auto md:flex md:justify-between text-zinc-800 dark:text-zinc-200 mt-4 gap-3 p-6">
+      <footer className="grid mx-auto md:flex md:justify-between text-zinc-800 dark:text-zinc-200 mt-5 gap-3 px-6">
         <Link
           href="https://www.linkedin.com/in/agustincalcagni/"
           className="flex items-center gap-2 hover:text-[#FF7759] transition-colors duration-200"

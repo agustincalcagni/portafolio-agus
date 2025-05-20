@@ -81,7 +81,7 @@ export const FormClient = () => {
           name="mensaje"
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Escribe tu mensaje"
-          className="w-full p-2 border border-gray-300 dark:border-zinc-700/50 rounded"
+          className="w-full p-2 border border-gray-300 dark:border-zinc-700/50 rounded resize-none"
           rows={4}
         ></textarea>
       </div>

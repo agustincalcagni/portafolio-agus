@@ -1,14 +1,15 @@
-'use client';
+/* eslint-disable @next/next/no-img-element */
+"use client";
 
-import 'highlight.js/styles/an-old-hope.css';
-import ReactMarkdown from 'react-markdown';
-import rehypeHighlight from 'rehype-highlight';
-import rehypeSlug from 'rehype-slug';
-import rehypeRaw from 'rehype-raw';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import { Copy, CopyCheck } from 'lucide-react';
-import { useRef, useState } from 'react';
-import Link from 'next/link';
+import "highlight.js/styles/an-old-hope.css";
+import ReactMarkdown from "react-markdown";
+import rehypeHighlight from "rehype-highlight";
+import rehypeSlug from "rehype-slug";
+import rehypeRaw from "rehype-raw";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { Copy, CopyCheck } from "lucide-react";
+import { useRef, useState } from "react";
+import Link from "next/link";
 
 export default function MarkdownRenderer({ content }: { content: string }) {
   const [isCopied, setCopied] = useState(false);
@@ -22,7 +23,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
       window.getSelection()!.addRange(range);
     }
 
-    document.execCommand('copy');
+    document.execCommand("copy");
     setCopied(true);
 
     window.getSelection()!.removeAllRanges();
@@ -51,28 +52,33 @@ export default function MarkdownRenderer({ content }: { content: string }) {
           <h3 className="mt-4 mb-2 text-xl font-semibold">{children}</h3>
         ),
         pre: ({ children }) => (
-          <div className="my-3 relative w-full">
+          <div className="my-3 relative w-full no-scroll-bar">
             {isCopied ? (
               <span title="Copiado">
                 <CopyCheck className="absolute right-3 top-3 w-4 text-white hover:text-blue-400" />
               </span>
             ) : (
               <span title="Copiar" onClick={handleCopyClick}>
-                <Copy className="absolute right-2 top-1 w-4 text-white hover:text-blue-400" />
+                <Copy className="absolute right-3 top-3 w-4 text-white hover:text-blue-400" />
               </span>
             )}
-            <pre className='rounded-lg bg-[#1C1D21] p-2' ref={preRef}>{children}</pre>
+            <pre className="rounded-lg bg-[#1C1D21] p-2" ref={preRef}>
+              {children}
+            </pre>
           </div>
         ),
         a: ({ href, children }) => (
           <Link
-            href={(href as string) || 'https://neo-wifi.vercel.app'}
+            href={(href as string) || "https://neo-wifi.vercel.app"}
             target="_blank"
             className="underline text-blue-500"
           >
             {children}
           </Link>
         ),
+        img: ({ src, alt }) => (
+          <img src={src as string} alt={alt as string} width="100%" height="auto" className="mx-auto" fetchPriority="high" />
+        )
       }}
     >
       {content}
