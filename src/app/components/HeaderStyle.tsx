@@ -8,7 +8,7 @@ export const HeaderStyle = ({ title }: { title: string }) => {
       </h3>
       <span className="">
         <Image
-          src="/banner.jpg"
+          src="/art-work.jpg"
           fill
           alt="Banner image"
           quality={100}

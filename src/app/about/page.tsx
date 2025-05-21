@@ -15,12 +15,12 @@ export default function AboutPage() {
         <h3 className="font-semibold text-xl">{about?.speciality}</h3>
         <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap no-scroll-bar">
           {skills.map((skill, index) => (
-            <span key={index} className={`dark:text-zinc-400 text-zinc-600
-              px-2 border border-zinc-300/70 dark:border-zinc-800 rounded cursor-default
+            <span key={`skill-${index}`} className={`dark:text-zinc-400 text-zinc-600
+              px-2 border border-zinc-300/70 dark:border-zinc-800 rounded cursor-default bg-gradient-to-b from-zinc-800 to-zinc-900
               `}>{skill}</span>
           ))}
         </div>
-        <p>
+        <p className="mt-6">
           {about?.body.raw}
         </p>
       </div>
