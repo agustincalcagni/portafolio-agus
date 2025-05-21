@@ -1,8 +1,8 @@
 export const links = [
   { name: "Inicio", url: "/" },
   { name: "acerca", url: "/about" },
-  { name: "proyectos", url: "/projects" },
   { name: "contacto", url: "/contact" },
+  { name: "proyectos", url: "/projects" },
 ];
 
 export const dateFormatter = ({

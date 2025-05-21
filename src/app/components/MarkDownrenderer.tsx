@@ -7,32 +7,9 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeRaw from "rehype-raw";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { Copy, CopyCheck } from "lucide-react";
-import { useRef, useState } from "react";
 import Link from "next/link";
 
 export default function MarkdownRenderer({ content }: { content: string }) {
-  const [isCopied, setCopied] = useState(false);
-  const preRef = useRef<HTMLPreElement>(null);
-
-  const handleCopyClick = () => {
-    if (preRef.current) {
-      const range = document.createRange();
-      range.selectNode(preRef.current);
-      window.getSelection()!.removeAllRanges();
-      window.getSelection()!.addRange(range);
-    }
-
-    document.execCommand("copy");
-    setCopied(true);
-
-    window.getSelection()!.removeAllRanges();
-
-    setTimeout(() => {
-      setCopied(false);
-    }, 1600);
-  };
-
   return (
     <ReactMarkdown
       rehypePlugins={[
@@ -53,16 +30,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
         ),
         pre: ({ children }) => (
           <div className="my-3 relative w-full no-scroll-bar">
-            {isCopied ? (
-              <span title="Copiado">
-                <CopyCheck className="absolute right-3 top-3 w-4 text-white hover:text-blue-400" />
-              </span>
-            ) : (
-              <span title="Copiar" onClick={handleCopyClick}>
-                <Copy className="absolute right-3 top-3 w-4 text-white hover:text-blue-400" />
-              </span>
-            )}
-            <pre className="rounded-lg bg-[#1C1D21] p-2" ref={preRef}>
+            <pre className="rounded-lg bg-[#1C1D21] p-2">
               {children}
             </pre>
           </div>

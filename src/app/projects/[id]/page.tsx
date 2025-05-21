@@ -22,16 +22,16 @@ export default async function ProjectPage({
       <span>
         <Link
           href="/projects"
-          className="flex gap-1 items-center mb-3 hover:underline group transition-transform duration-300"
+          className="flex gap-1 items-center mb-3 hover:underline group transition-transform duration-300 text-zinc-400 dark:text-zinc-500"
         >
           <MoveLeft className="group-hover:-translate-x-1" />
           Volver
         </Link>
       </span>
       <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
-      <p className="text-gray-600 mb-4">
+      <time className="text-zinc-600 mb-4">
         {dateFormatter({ lang: "es-AR", rawDate: project.date })}
-      </p>
+      </time>
       <div className="prose">
         <MarkdownRenderer content={project.body.raw ?? ""} />
       </div>

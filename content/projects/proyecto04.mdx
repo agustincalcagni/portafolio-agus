@@ -1,12 +1,29 @@
 ---
-title: "Analisis mercado zona Concarán"
-date: 2025-05-19
+title: "Ejemplo de análisis de mercado en Concarán"
+date: 2025-05-20
 ---
 
-# Análisis de mercado de la zona
+# Análisis de Mercado en Concarán
 
-1. Este es un ejemplo de analaisis de la zona.
+Este documento presenta un ejemplo de análisis de mercado en la zona de Concarán, utilizando datos demográficos y económicos para identificar oportunidades de negocio.
+
+## Objetivo
+
+El objetivo principal es analizar la población y las características económicas de la región para determinar:
+
+- La densidad poblacional.
+- El ingreso promedio por hogar.
+- Las oportunidades de crecimiento en sectores clave.
+
+## Datos Utilizados
+
+Los datos se obtuvieron de una base de datos local que contiene información sobre la población y la economía de Concarán.
+
+### Ejemplo de Consulta SQL
+
+La siguiente consulta SQL extrae la cantidad de habitantes por ciudad:
 
 ```sql
-FROM ciudad SELECT hab;
-```
+SELECT ciudad, COUNT(*) AS habitantes
+FROM poblacion
+GROUP BY ciudad;
